@@ -61,7 +61,7 @@ jobs:
             version=${{ env.VERSION }}
           REGISTRY_USER: ${{ secrets.REGISTRY_USER }}
           REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
-          PUSH: ${{(github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository)}}
+          PUSH: false
 
       - id: report_docker_build_to_pr
         name: Report Docker Build to PR
